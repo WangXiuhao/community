@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Primary//优先装配
-public cl  ass AlphaDaoMybatisImpl implements AlphaDao{
+public class AlphaDaoMybatisImpl implements AlphaDao{
     @Override
     public String select() {
         return "Mybits";

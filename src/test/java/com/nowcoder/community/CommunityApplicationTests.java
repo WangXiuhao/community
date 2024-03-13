@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
 
-import java.sql.SQLOutput;
 
 @SpringBootTest
 @ContextConfiguration(classes = CommunityApplication.class) //就以他为配置类,和正式环境中是一样的
