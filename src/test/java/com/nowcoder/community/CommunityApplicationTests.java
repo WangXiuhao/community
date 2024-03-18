@@ -3,6 +3,7 @@ package com.nowcoder.community;
 import com.nowcoder.community.dao.AlphaDao;
 import com.nowcoder.community.sevice.AlphaService;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,12 +11,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
 @SpringBootTest
+@RunWith(SpringRunner.class)
 @ContextConfiguration(classes = CommunityApplication.class) //就以他为配置类,和正式环境中是一样的
 
 class CommunityApplicationTests implements ApplicationContextAware { //哪个要得到容器，就实现这个接口
