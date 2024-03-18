@@ -34,3 +34,18 @@ MVC三层架构
 
 request获取请求数据的几种办法
 ![img_2.png](img_2.png)
+
+跳过mysql安装的部分 公司电脑可能不能用 等着回家实验
+
+MyBatis
+    核心组件
+    【前三个核心组件被springboot整合】
+    SqlSessionFactory：用于创建SqlSession的工厂类
+    SqlSession：MyBatis的核心组件，用于向数据库执行sql
+    主配置文件：XML配置文件，可以对MyBatis的底层行为作出详细的配置
+
+    Mapper接口：DAO接口
+    Mapper映射器：用于编写sql，并将sql和实体类映射的组件，采用xml、注解实现
+
+代码实现部分：
+1.先搜索jar包 去https://mvnrepository.com
