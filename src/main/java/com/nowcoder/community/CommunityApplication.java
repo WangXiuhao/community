@@ -1,5 +1,6 @@
 package com.nowcoder.community;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 启用Spring Boot的自动配置功能，根据项目的依赖自动配置Spring应用程序。
 将该类标识为Spring的配置类，这在功能上等同于XML配置文件中的标签
 */
-
+@MapperScan("com.nowcoder.community.dao")
 public class CommunityApplication {
 
 	public static void main(String[] args) {

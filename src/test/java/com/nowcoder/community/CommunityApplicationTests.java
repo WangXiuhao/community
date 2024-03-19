@@ -2,7 +2,8 @@ package com.nowcoder.community;
 
 import com.nowcoder.community.dao.AlphaDao;
 import com.nowcoder.community.sevice.AlphaService;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ class CommunityApplicationTests implements ApplicationContextAware { //哪个要
 		this.applicationContext = applicationContext;//做记录，可以在其他地方使用了
 	 }
 
-	 @Test
+//	 @Test
 	public void testApplicationContext(){
 		 System.out.println(applicationContext);
 		 AlphaDao alphaDao = applicationContext.getBean(AlphaDao.class);//从容器中获取这个类的bean

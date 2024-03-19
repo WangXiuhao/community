@@ -24,7 +24,7 @@ public class MapperTests {
     private UserMapper userMapper;
 
 
-    //需要测试001
+
     @Test
     public void testSelectUser(){
         User user = userMapper.selectById(101);
@@ -35,7 +35,6 @@ public class MapperTests {
         System.out.println(user);
     }
 
-    //需要测试002
     @Test
     public void testInsertUser(){
         User user = new User();
@@ -51,10 +50,9 @@ public class MapperTests {
         System.out.println(user.getId());
     }
 
-    //需要测试003
     @Test
     public void updateUser(){
-        int rows = userMapper.updateStates(101,0);
+        int rows = userMapper.updateStatus(101,0);
         System.out.println(rows);
 
         rows = userMapper.updateHeader(101,"https://www.leodeluntan.com/101.png");
