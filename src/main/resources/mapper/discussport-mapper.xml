@@ -25,6 +25,7 @@
         from discuss_post
         where status != 2
         <if test="userId!=0">
+<!--            如果等于0就返回全部数据-->
             and user_id = #{userId}
         </if>
     </select>
