@@ -36,14 +36,14 @@ public class Page {
         }
     }
 
-    public void getRows(int rows) {
-        if(rows>=0) {
-            this.rows = rows;
-        }
+    public int getRows() {
+        return rows;
     }
 
     public void setRows(int rows) {
-        this.rows = rows;
+        if (rows >= 0) {
+            this.rows = rows;
+        }
     }
 
     public String getPath() {
@@ -58,7 +58,7 @@ public class Page {
      * 获取当前页的起始行
      * @return
      */
-    private int getOffset(){
+    public int getOffset(){
         //(current-1) * limit
         return (current-1)*limit;
     }
