@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -91,6 +92,13 @@ public class UserService {
         user.setCreateTime(new Date());
         userMapper.insertUser(user);//添加到库里
         //然后就要给用户发送激活邮件了
+
+        //激活邮件
+        Context context = new Context();
+        context.setVariable("email",user.getEmail());
+        // url: http://localhost:8080/community/activation/
+
+
         return map;
     }
 
