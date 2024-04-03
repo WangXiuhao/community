@@ -50,11 +50,11 @@ public class UserService {
             throw new IllegalArgumentException("参数不能为空");
         }
         if(StringUtils.isBlank(user.getUsername())){
-            map.put("usernameMag","账号内容不能为空！");
+            map.put("usernameMsg","账号内容不能为空！");
             return map;
         }
         if(StringUtils.isBlank(user.getPassword())){
-            map.put("passwordMag","密码不能为空！");
+            map.put("passwordMsg","密码不能为空！");
             return map;
         }
         if(StringUtils.isBlank(user.getEmail())){
@@ -71,7 +71,7 @@ public class UserService {
         //验证邮箱
         user1 = userMapper.selectByEmail(user.getEmail());
         if(user1 != null ){
-            map.put("emailMag","该邮箱已被注册！");
+            map.put("emailMsg","该邮箱已被注册！");
             return map;
         }
 
@@ -91,19 +91,15 @@ public class UserService {
         //注册的时间
         user.setCreateTime(new Date());
         userMapper.insertUser(user);//添加到库里
-        //然后就要给用户发送激活邮件了
 
-        //激活邮件
+        //然后就要给用户发送激活邮件了
         Context context = new Context();
         context.setVariable("email",user.getEmail());
-        // url: http://localhost:8080/community/activation/ 用户ID / 激活码
-        String url = domain + contextPath + "/activation/" +user.getId() + "/"+user.getActivationCode();
+        String url = domain + contextPath + "/activation/" + user.getId() + "/"+user.getActivationCode();
         context.setVariable("url",url);
-
-        String content = templateEngine.process("/mail/activation",context);//模板和要传的context
+        //生成邮件内容
+        String content = templateEngine.process("/mail/activation",context);
         mailClient.sendMail(user.getEmail(),"激活账号",content);
-
-
         return map;
     }
 
