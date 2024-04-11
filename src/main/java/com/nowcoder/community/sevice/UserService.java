@@ -133,7 +133,6 @@ public class UserService implements CommunityConstant {
     }
 
     //登录的功能
-
     public Map<String,Object> login(String username,String password, int expiredSeconds){
         Map<String,Object> map = new HashMap<>();
 
@@ -181,5 +180,8 @@ public class UserService implements CommunityConstant {
         return loginTicketMapper.selectByTicket(ticket);
     }
 
-
+    //更新用户头像
+    public int updateHeader(int userId,String haaderUrl){
+        return userMapper.updateHeader(userId,haaderUrl);
+    }
 }
