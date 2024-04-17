@@ -11,7 +11,7 @@
 <!--	让thymeleaf去static下找资源-->
 	<title>牛客网-首页</title>
 </head>
-<body>	
+<body>
 	<div class="nk-container">
 		<!-- 头部 -->
 		<header class="bg-dark sticky-top" th:fragment="header">
@@ -121,7 +121,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- 帖子列表 -->
 				<ul class="list-unstyled">
 					<li class="media pb-3 pt-3 mb-3 border-bottom" th:each="map:${discussPosts}">
@@ -146,15 +146,15 @@
 								<ul class="d-inline float-right">
 									<li class="d-inline ml-2">赞 11</li>
 									<li class="d-inline ml-2">|</li>
-									<li class="d-inline ml-2">回帖 7</li>
+									<li class="d-inline ml-2">回帖 <span th:text="${map.post.commentCount}"></span></li>
 								</ul>
 							</div>
-						</div>						
+						</div>
 					</li>
 
 				</ul>
 				<!-- 分页 -->
-				<nav class="mt-5" th:if="${page.rows>0}">
+				<nav class="mt-5" th:if="${page.rows>0}" th:fragment="pagination">
 <!--					判断一下有数据才显示-->
 					<ul class="pagination justify-content-center">
 						<li class="page-item">
@@ -167,7 +167,7 @@
 						</li>
 						<li th:class="|page-item ${i==page.current?'active':''}|" th:each="i:${#numbers.sequence(page.from,page.to)}">
 <!--							$表示变量 #表示工具-->
-							<a class="page-link" href="#" th:text="${i}">1</a>
+							<a class="page-link" th:href="@{${page.path}(current = ${i})}" th:text="${i}">1</a>
 						</li>
 
 						<li th:class="|page-item ${page.current==page.total?'disabled':''}|">
