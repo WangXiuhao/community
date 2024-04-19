@@ -33,6 +33,7 @@ public class MessageController {
     //私信列表
     @RequestMapping(path = "/letter/list",method = RequestMethod.GET)
     public String getLetterList(Model model, Page page){
+
         User user = hostHolder.getUser();
         //分页信息
         page.setLimit(5);
@@ -69,6 +70,7 @@ public class MessageController {
     public String getLetterDetail(@PathVariable("conversationId") String conversationId, Page page, Model model) {
         // 分页信息
         page.setLimit(5);
+
         page.setPath("/letter/detail/" + conversationId);
         page.setRows(messageService.findLetterCount(conversationId));
 
