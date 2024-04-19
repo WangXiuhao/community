@@ -1,6 +1,6 @@
 package com.nowcoder.community.controller;
 
-import com.nowcoder.community.sevice.AlphaService;
+import com.nowcoder.community.service.AlphaService;
 //import jakarta.servlet.http.HttpServletRequest;
 //import jakarta.servlet.http.HttpServletResponse;
 import com.nowcoder.community.util.CommunityUtil;

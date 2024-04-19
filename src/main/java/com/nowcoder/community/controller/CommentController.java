@@ -1,7 +1,7 @@
 package com.nowcoder.community.controller;
 
 import com.nowcoder.community.entity.Comment;
-import com.nowcoder.community.sevice.CommentService;
+import com.nowcoder.community.service.CommentService;
 import com.nowcoder.community.util.HostHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -2,7 +2,7 @@ package com.nowcoder.community.controller;
 
 import com.google.code.kaptcha.Producer;
 import com.nowcoder.community.entity.User;
-import com.nowcoder.community.sevice.UserService;
+import com.nowcoder.community.service.UserService;
 import com.nowcoder.community.util.CommunityConstant;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.imageio.ImageIO;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;

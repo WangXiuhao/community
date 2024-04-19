@@ -1,4 +1,4 @@
-package com.nowcoder.community.sevice;
+package com.nowcoder.community.service;
 
 import com.nowcoder.community.dao.DiscussPostMapper;
 import com.nowcoder.community.entity.DiscussPost;
@@ -6,7 +6,6 @@ import com.nowcoder.community.util.SensitiveFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.HtmlUtils;
-import org.unbescape.html.HtmlEscape;
 
 import java.util.List;
 
