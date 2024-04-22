@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
  * @version 1.0
  */
 @Mapper
+@Deprecated//表示不推荐使用了
 public interface LoginTicketMapper {
 
     @Insert({
