@@ -154,3 +154,21 @@ Redis满足事务的机制并不严格满足acid，只有关系型数据库严�
 Redis事务管理机制：
 当我启用事务以后，会把多个redis命令放到队列里，先存着，直到提交事务会把队列发给redis服务器一起执行
 所以不要在事务中间做查询，要么提前查，要么事务提交以后再差
+
+### 阻塞队列
+Blocking Queue
+生产者消费者模式
+避免速度不一造成系统资源的浪费
+
+·Kafka简介
+-Kafka是一个分布式的流媒体平台。
+-应用:消息系统、日志收集、用户行为追踪、流式处理。
+·Kafka特点
+-高吞吐量、消息持久化（消息存到硬盘里）、高可靠性、高扩展性。
+· Kafka术语
+- Broker. Zookeeper
+- Topic, Partition, Offset
+- Leader Replica . Follower Replica
+
+建立索引
+发送数据
