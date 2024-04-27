@@ -1,20 +1,36 @@
 package com.nowcoder.community.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
 import java.util.Date;
 
 /**
  * @author 王修豪
  * @version 1.0
  */
+@Document(indexName = "discusspost",type = "doc",shards = 6,replicas = 3)
 public class DiscussPost {//帖子
+    @Id
     private int id;
+    @Field(type = FieldType.Integer)
     private int userId;
+    //互联网校招 没必要拆特别细 分词器 存储的时候ik_max_word会把单词拆分最多的次数 互联 互联网 联网 网校 校招 搜索的时候会用smart
+    @Field(type = FieldType.Text,analyzer = "ik_max_word",searchAnalyzer = "ik_smart")
     private String title;
+    @Field(type = FieldType.Text,analyzer = "ik_max_word",searchAnalyzer = "ik_smart")
     private String content;
+    @Field(type = FieldType.Integer)
     private int type;
+    @Field(type = FieldType.Integer)
     private int status;
+    @Field(type = FieldType.Date)
     private Date createTime;
+    @Field(type = FieldType.Integer)
     private int commentCount;
+    @Field(type = FieldType.Double)
     private double score;
 
     @Override
